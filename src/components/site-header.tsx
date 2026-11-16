@@ -54,7 +54,7 @@ export function SiteHeader() {
             );
           })}
           <Link className="button button-small nav-cta" href="/membership" onClick={() => setOpen(false)}>
-            Connect with PKMI
+            Connect with Us
           </Link>
         </nav>
       </div>

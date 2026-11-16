@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="hero-image" aria-hidden="true" />
+        {/* <div className="hero-image" aria-hidden="true" /> */}
         <div className="container hero-content">
           <span className="eyebrow">A Christian spiritual forum</span>
           <h1>Raising Kingdom Mothers.<br /><em>Strengthening</em> Generations.</h1>
