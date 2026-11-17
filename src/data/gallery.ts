@@ -1,3 +1,6 @@
+import { readdirSync } from "node:fs";
+import path from "node:path";
+
 export const categories = [
   "Conferences",
   "Prayer & Retreats",
@@ -29,34 +32,47 @@ export type GalleryEvent = {
   photos: GalleryPhoto[];
 };
 
+const EXT = ".webp";
+
+const fromFolder = (
+  slug: string,
+  alt: string,
+  featured: number[] = [],
+): GalleryPhoto[] => {
+  const dir = path.join(process.cwd(), "public/images/gallery", slug);
+  let files: string[] = [];
+  try {
+    files = readdirSync(dir).filter((f) => f.endsWith(EXT));
+  } catch {
+    // folder not created yet: event stays hidden
+  }
+  files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  return files.map((file, i) => ({
+    file,
+    alt: `${alt} (photo ${i + 1})`,
+    featured: featured.includes(i + 1),
+  }));
+};
+
 /* ---------- CONTENT: replace the example below with real, approved events ---------- */
 const events: GalleryEvent[] = [
   {
-    slug: "grand-mega-prayer-retreat-2026",
-    title: "Grand Mega Prayer Retreat",
-    category: "Prayer & Retreats",
-    startDate: "2026-11-11",
-    endDate: "2026-11-14",
+    slug: "kizazi-phenomenal-2025",
+    title: "Kizazi Phenomenal",
+    category: "Family & Children",
+    startDate: "2025-12-11",
+    endDate: "2025-12-14",
     venue: "Heavens Gate",
     location: "Nakuru",
-    summary: "TODO one-line summary.",
-    description: "TODO event introduction.",
-    cover: "",
-    published: false,
-    photos: [],
-  },
-  {
-    slug: "dunamis-prayer-breakfast-2026",
-    title: "Dunamis Prayer Breakfast",
-    category: "Prayer & Retreats",
-    startDate: "2026-11-14",
-    venue: "Kingdom Seekers Complex",
-    location: "Nakuru",
-    summary: "TODO one-line summary.",
-    description: "TODO event introduction.",
-    cover: "",
-    published: false,
-    photos: [],
+    summary: "KEEP YOUR EXISTING SUMMARY",
+    description: "KEEP YOUR EXISTING DESCRIPTION",
+    cover: "kizazi-phenomenal-2025-1.webp", // keep your chosen cover
+    published: true,
+    photos: fromFolder(
+      "kizazi-phenomenal-2025",
+      "Kizazi Phenomenal 2025 at Heavens Gate, Nakuru",
+      [1, 5, 9], // keep your featured picks
+    ),
   },
   {
     slug: "kizazi-phenomenal-2026",
@@ -67,37 +83,45 @@ const events: GalleryEvent[] = [
     location: "Bungoma",
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
-    cover: "",
+    cover: "kizazi-phenomenal-2026-1.webp",
     published: false,
-    photos: [],
+    photos: fromFolder(
+      "kizazi-phenomenal-2026",
+      "Kizazi Phenomenal 2026 at Brethren Fellowship Church, Bungoma",
+    ),
   },
   {
-    slug: "kizazi-phenomenal-2025",
-    title: "Kizazi Phenomenal",
-    category: "Family & Children",
-    startDate: "2025-12-11",
-    endDate: "2025-12-14",
+    slug: "grand-mega-prayer-retreat-2026",
+    title: "Grand Mega Prayer Retreat",
+    category: "Prayer & Retreats",
+    startDate: "2026-11-11",
+    endDate: "2026-11-14",
     venue: "Heavens Gate",
     location: "Nakuru",
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
-    cover: "",
+    cover: "grand-mega-prayer-retreat-2026-1.webp",
     published: false,
-    photos: [],
+    photos: fromFolder(
+      "grand-mega-prayer-retreat-2026",
+      "Grand Mega Prayer Retreat 2026 at Heavens Gate, Nakuru",
+    ),
   },
   {
-    slug: "grand-levitical-ladies-conference-2026",
-    title: "Grand Levitical Ladies Conference",
-    category: "Conferences",
-    startDate: "2026-04-21",
-    endDate: "2026-04-23",
-    venue: "CORAT Africa",
-    location: "Karen, Nairobi",
+    slug: "dunamis-prayer-breakfast-2026",
+    title: "Dunamis Prayer Breakfast",
+    category: "Prayer & Retreats",
+    startDate: "2026-11-14",
+    venue: "Kingdom Seekers Complex",
+    location: "Nakuru",
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
-    cover: "",
+    cover: "dunamis-prayer-breakfast-2026-1.webp",
     published: false,
-    photos: [],
+    photos: fromFolder(
+      "dunamis-prayer-breakfast-2026",
+      "Dunamis Prayer Breakfast 2026 at Kingdom Seekers Complex, Nakuru",
+    ),
   },
   {
     slug: "grand-mega-levitical-conference-2026",
@@ -109,9 +133,29 @@ const events: GalleryEvent[] = [
     location: "Karen, Nairobi",
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
-    cover: "",
+    cover: "grand-mega-levitical-conference-2026-1.webp",
     published: false,
-    photos: [],
+    photos: fromFolder(
+      "grand-mega-levitical-conference-2026",
+      "Grand Mega Levitical Conference 2026 at CORAT Africa, Karen, Nairobi",
+    ),
+  },
+  {
+    slug: "grand-levitical-ladies-conference-2026",
+    title: "Grand Levitical Ladies Conference",
+    category: "Conferences",
+    startDate: "2026-04-21",
+    endDate: "2026-04-23",
+    venue: "CORAT Africa",
+    location: "Karen, Nairobi",
+    summary: "TODO one-line summary.",
+    description: "TODO event introduction.",
+    cover: "grand-levitical-ladies-conference-2026-1.webp",
+    published: false,
+    photos: fromFolder(
+      "grand-levitical-ladies-conference-2026",
+      "Grand Levitical Ladies Conference 2026 at CORAT Africa, Karen, Nairobi",
+    ),
   },
 ];
 /* ----------------------------------------------------------------------------------- */
