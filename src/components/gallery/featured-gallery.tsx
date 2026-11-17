@@ -40,11 +40,11 @@ export function FeaturedGallery() {
               </span>
             </Link>
           ))}
-          {GALLERY_INDEX_LIVE && (
+          {/* {GALLERY_INDEX_LIVE && (
             <Link className="button" href="/gallery">
               View the full gallery <span aria-hidden="true">↗</span>
             </Link>
-          )}
+          )} */}
         </div>
       </div>
     </section>
