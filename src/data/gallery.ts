@@ -46,6 +46,8 @@ const fromFolder = (
   } catch {
     // folder not created yet: event stays hidden
   }
+  if (process.env.NODE_ENV !== "production" && files.length === 0)
+    console.warn(`[gallery] no ${EXT} files for "${slug}" in ${dir}`);
   files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   return files.map((file, i) => ({
     file,
@@ -84,7 +86,7 @@ const events: GalleryEvent[] = [
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
     cover: "kizazi-phenomenal-2026-1.webp",
-    published: false,
+    published: true,
     photos: fromFolder(
       "kizazi-phenomenal-2026",
       "Kizazi Phenomenal 2026 at Brethren Fellowship Church, Bungoma",
@@ -101,7 +103,7 @@ const events: GalleryEvent[] = [
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
     cover: "grand-mega-prayer-retreat-2026-1.webp",
-    published: false,
+    published: true,
     photos: fromFolder(
       "grand-mega-prayer-retreat-2026",
       "Grand Mega Prayer Retreat 2026 at Heavens Gate, Nakuru",
@@ -117,7 +119,7 @@ const events: GalleryEvent[] = [
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
     cover: "dunamis-prayer-breakfast-2026-1.webp",
-    published: false,
+    published: true,
     photos: fromFolder(
       "dunamis-prayer-breakfast-2026",
       "Dunamis Prayer Breakfast 2026 at Kingdom Seekers Complex, Nakuru",
@@ -134,7 +136,7 @@ const events: GalleryEvent[] = [
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
     cover: "grand-mega-levitical-conference-2026-1.webp",
-    published: false,
+    published: true,
     photos: fromFolder(
       "grand-mega-levitical-conference-2026",
       "Grand Mega Levitical Conference 2026 at CORAT Africa, Karen, Nairobi",
@@ -151,7 +153,7 @@ const events: GalleryEvent[] = [
     summary: "TODO one-line summary.",
     description: "TODO event introduction.",
     cover: "grand-levitical-ladies-conference-2026-1.webp",
-    published: false,
+    published: true,
     photos: fromFolder(
       "grand-levitical-ladies-conference-2026",
       "Grand Levitical Ladies Conference 2026 at CORAT Africa, Karen, Nairobi",
