@@ -94,6 +94,7 @@ const events: GalleryEvent[] = [
     photos: fromFolder(
       "kizazi-phenomenal-2026",
       "Kizazi Phenomenal 2026 at Brethren Fellowship Church, Bungoma",
+      [6, 10, 15]
     ),
   },
   {
@@ -107,11 +108,12 @@ const events: GalleryEvent[] = [
     summary:
       "Daniel 11:32 : ...but the people that do know their God shall be strong, and do exploits.",
     description: "",
-    cover: "grand-mega-prayer-retreat-2026-1.webp",
+    cover: "grand-mega-prayer-retreat-2026-35.webp",
     published: true,
     photos: fromFolder(
       "grand-mega-prayer-retreat-2026",
       "Grand Mega Prayer Retreat 2026 at Heavens Gate, Nakuru",
+      [2, 7, 12]
     ),
   },
   {
@@ -129,6 +131,7 @@ const events: GalleryEvent[] = [
     photos: fromFolder(
       "dunamis-prayer-breakfast-2026",
       "Dunamis Prayer Breakfast 2026 at Kingdom Seekers Complex, Nakuru",
+      [3, 5, 9]
     ),
   },
   {
@@ -146,6 +149,7 @@ const events: GalleryEvent[] = [
     photos: fromFolder(
       "grand-mega-levitical-conference-2026",
       "Grand Mega Levitical Conference 2026 at CORAT Africa, Karen, Nairobi",
+      [1, 5, 10]
     ),
   },
   {
@@ -163,6 +167,7 @@ const events: GalleryEvent[] = [
     photos: fromFolder(
       "grand-levitical-ladies-conference-2026",
       "Grand Levitical Ladies Conference 2026 at CORAT Africa, Karen, Nairobi",
+      [3, 7, 15]
     ),
   },
 ];
