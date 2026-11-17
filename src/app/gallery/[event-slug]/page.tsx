@@ -57,7 +57,7 @@ export default async function EventGalleryPage({ params }: Props) {
           <div className="event-detail two-column">
             <div>
               <span className="eyebrow">About this event</span>
-              <p className="lead">{event.description}</p>
+              <p className="lead">{event.description ?? event.summary}</p>
             </div>
             <dl className="event-facts">
               <div>

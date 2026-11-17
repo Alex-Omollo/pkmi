@@ -28,7 +28,7 @@ export type GalleryEvent = {
   venue: string;
   location: string;
   summary: string; // one line, used on cards, hero and metadata
-  // description: string; // intro paragraph on the event page
+  description?: string; // intro paragraph on the event page
   cover: string; // must match a file in photos
   published: boolean;
   photos: GalleryPhoto[];
@@ -70,7 +70,7 @@ const events: GalleryEvent[] = [
     location: "Nakuru",
     summary:
       "James 5:17-18 : Elias was a man subject to like passions as we are ...",
-    // description: "KEEP YOUR EXISTING DESCRIPTION",
+    description: "KEEP YOUR EXISTING DESCRIPTION",
     cover: "kizazi-phenomenal-2025-1.webp", // keep your chosen cover
     published: true,
     photos: fromFolder(
@@ -88,7 +88,7 @@ const events: GalleryEvent[] = [
     location: "Bungoma",
     summary:
       "Philippians 3:10 : That I may know Him and the power of His resurrection.",
-    // description: "TODO event introduction.",
+    description: "TODO event introduction.",
     cover: "kizazi-phenomenal-2026-1.webp",
     published: true,
     photos: fromFolder(
@@ -106,7 +106,7 @@ const events: GalleryEvent[] = [
     location: "Nakuru",
     summary:
       "Daniel 11:32 : ...but the people that do know their God shall be strong, and do exploits.",
-    // description: "TODO event introduction.",
+    description: "TODO event introduction.",
     cover: "grand-mega-prayer-retreat-2026-1.webp",
     published: true,
     photos: fromFolder(
@@ -123,7 +123,7 @@ const events: GalleryEvent[] = [
     location: "Nakuru",
     summary:
       "Psalm 18:29 : For by thee I have run through a troop; and by my God have I leaped over a wall.",
-    // description: "TODO event introduction.",
+    description: "TODO event introduction.",
     cover: "dunamis-prayer-breakfast-2026-1.webp",
     published: true,
     photos: fromFolder(
@@ -140,7 +140,7 @@ const events: GalleryEvent[] = [
     venue: "CORAT Africa",
     location: "Karen, Nairobi",
     summary: "1st Samuel 30:8 : Pursue, overtake and recover all!",
-    // description: "TODO event introduction.",
+    description: "TODO event introduction.",
     cover: "grand-mega-levitical-conference-2026-1.webp",
     published: true,
     photos: fromFolder(
@@ -157,7 +157,7 @@ const events: GalleryEvent[] = [
     venue: "CORAT Africa",
     location: "Karen, Nairobi",
     summary: "1st Samuel 30:8 : Pursue, overtake and recover all!",
-    // description: "TODO event introduction.",
+    description: "TODO event introduction.",
     cover: "grand-levitical-ladies-conference-2026-1.webp",
     published: true,
     photos: fromFolder(
