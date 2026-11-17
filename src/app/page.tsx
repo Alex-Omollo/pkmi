@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FeaturedGallery } from "@/components/gallery/featured-gallery";
 
 const activities = [
   { number: "01", title: "Conferences & gatherings", text: "National and international gatherings that encourage spiritual growth, connection and shared purpose." },
@@ -78,6 +79,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <FeaturedGallery />
 
       <section className="values-section section-pad">
         <div className="container values-layout">

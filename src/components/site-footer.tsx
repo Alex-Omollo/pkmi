@@ -16,6 +16,7 @@ export function SiteFooter() {
         </div>
         <div>
           <h3>Explore</h3>
+          <Link href="/gallery">Gallery</Link>
           <Link href="/about">About PKMI</Link>
           <Link href="/our-work">Our Work</Link>
           <Link href="/events-news">Events & News</Link>

@@ -9,6 +9,7 @@ const links = [
   { href: "/about", label: "About PKMI" },
   { href: "/our-work", label: "Our Work" },
   { href: "/events-news", label: "Events & News" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/membership", label: "Membership" },
   { href: "/contact", label: "Contact" },
 ];
