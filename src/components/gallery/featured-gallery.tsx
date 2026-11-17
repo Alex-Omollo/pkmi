@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getFeaturedPhotos } from "@/data/gallery";
+import { getFeaturedPhotos, GALLERY_INDEX_LIVE } from "@/data/gallery";
 
 export function FeaturedGallery() {
   const all = getFeaturedPhotos(6);
@@ -40,6 +40,11 @@ export function FeaturedGallery() {
               </span>
             </Link>
           ))}
+          {GALLERY_INDEX_LIVE && (
+            <Link className="button" href="/gallery">
+              View the full gallery <span aria-hidden="true">↗</span>
+            </Link>
+          )}
         </div>
       </div>
     </section>

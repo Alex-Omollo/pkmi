@@ -27,7 +27,7 @@ for await (const src of walk(SRC)) {
   }
 
   const destDir = path.join(OUT, slug);
-  const dest = path.join(destDir, `${kebab(name)}.jpg`);
+  const dest = path.join(destDir, `${kebab(name)}.webp`);
   await mkdir(destDir, { recursive: true });
 
   const destStat = await stat(dest).catch(() => null);
@@ -36,7 +36,7 @@ for await (const src of walk(SRC)) {
   await sharp(src)
     .rotate()
     .resize({ width: MAX, height: MAX, fit: "inside", withoutEnlargement: true })
-    .jpeg({ quality: 82, mozjpeg: true })
+    .jpeg({ quality: 82, effort: 5 })
     .toFile(dest);
   console.log("✓", dest);
 }

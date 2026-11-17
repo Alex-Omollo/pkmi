@@ -11,6 +11,7 @@ import {
   getRelatedEvents,
   publishedEvents,
   toEventView,
+  GALLERY_INDEX_LIVE,
 } from "@/data/gallery";
 
 type Props = { params: Promise<{ "event-slug": string }> };
@@ -136,6 +137,11 @@ export default async function EventGalleryPage({ params }: Props) {
                   </p>
                 </Link>
               ))}
+              {GALLERY_INDEX_LIVE && (
+                <Link className="button" href="/gallery">
+                  View the full gallery <span aria-hidden="true">↗</span>
+                </Link>
+              )}
             </div>
           </div>
         </section>
