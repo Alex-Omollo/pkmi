@@ -89,7 +89,7 @@ const events: GalleryEvent[] = [
     summary:
       "Philippians 3:10 : That I may know Him and the power of His resurrection.",
     description: "",
-    cover: "kizazi-phenomenal-2026-1.webp",
+    cover: "kizazi-phenomenal-2026-8.webp",
     published: true,
     photos: fromFolder(
       "kizazi-phenomenal-2026",
@@ -213,7 +213,7 @@ export const galleryCategories = categories.filter((c) =>
 export const getEvent = (slug: string) =>
   publishedEvents.find((e) => e.slug === slug);
 
-export function formatEventDate(e: GalleryEvent) {
+export function formatEventDate(e: { startDate: string; endDate?: string }) {
   const start = fmt.format(new Date(e.startDate));
   return e.endDate && e.endDate !== e.startDate
     ? `${start} – ${fmt.format(new Date(e.endDate))}`

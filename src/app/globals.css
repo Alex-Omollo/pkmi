@@ -1,5 +1,4 @@
 
-
 :root {
   --plum: #48133f;
   --plum-deep: #2d0929;
@@ -183,6 +182,20 @@ h2 { margin: 18px 0 22px; font-size: clamp(36px, 4.2vw, 56px); }
 .contact-form-card input:focus, .contact-form-card select:focus, .contact-form-card textarea:focus { border-color: var(--gold); }
 .contact-form-card textarea { resize: vertical; }
 .contact-form-card button { align-self: flex-start; margin-top: 22px; }
+.upcoming-list { border-top: 1px solid var(--line); }
+.upcoming-item { display: grid; grid-template-columns: 90px 1fr auto; gap: 28px; align-items: center; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.upcoming-date { display: flex; flex-direction: column; align-items: center; padding: 14px 0; border: 1px solid var(--line); background: white; color: var(--plum); }
+.upcoming-date strong { font-family: var(--serif); font-size: 34px; font-weight: 500; line-height: 1; }
+.upcoming-date span { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.upcoming-item h3 { margin: 8px 0 4px; color: var(--plum); font-family: var(--serif); font-size: 28px; font-weight: 500; }
+.event-card { display: block; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; }
+button.event-card { cursor: zoom-in; }
+.event-card-image { position: relative; display: block; aspect-ratio: 4 / 5; margin-bottom: 16px; overflow: hidden; background: var(--paper); }
+.event-card-image img { object-fit: cover; transition: transform .5s ease; }
+.event-card-image.is-poster img { object-fit: contain; }
+.event-card:hover .event-card-image img { transform: scale(1.03); }
+button.event-card-image { display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; }
+.event-card-empty { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 22px; background: linear-gradient(145deg, #6d4260, #2d0929); color: white; font-family: var(--serif); font-size: 22px; }
 
 /* Missing / incomplete page */
 .missing-page { position: relative; overflow: hidden; padding: 110px 0 120px; background: var(--cream); text-align: center; }
@@ -272,6 +285,8 @@ h2 { margin: 18px 0 22px; font-size: clamp(36px, 4.2vw, 56px); }
   .lightbox-stage { margin: 64px 12px 0; }
   .lightbox-bar { padding-inline: 16px; }
   .lightbox-prev { left: 6px; } .lightbox-next { right: 6px; }
+  .upcoming-item { grid-template-columns: 1fr; gap: 16px; }
+  .upcoming-date { align-self: flex-start; width: 80px; }
 }
 
 /* Footer */
