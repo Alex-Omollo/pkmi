@@ -61,7 +61,7 @@ const fromFolder = (
 /* ---------- CONTENT: replace the example below with real, approved events ---------- */
 const events: GalleryEvent[] = [
   {
-    slug: "kizazi-phenomenal-2025",
+    slug: "kizaziprayerandfastingretreat",
     title: "Kizazi Phenomenal",
     category: "Family & Children",
     startDate: "2025-12-11",
@@ -71,16 +71,16 @@ const events: GalleryEvent[] = [
     summary:
       "James 5:17-18 : Elias was a man subject to like passions as we are ...",
     description: "",
-    cover: "kizazi-phenomenal-2025-1.webp", // keep your chosen cover
+    cover: "kizaziprayerandfastingretreat-1.webp", // keep your chosen cover
     published: true,
     photos: fromFolder(
-      "kizazi-phenomenal-2025",
+      "kizaziprayerandfastingretreat",
       "Kizazi Phenomenal 2025 at Heavens Gate, Nakuru",
       [1, 5, 9], // keep your featured picks
     ),
   },
   {
-    slug: "kizazi-phenomenal-2026",
+    slug: "kizakiphenomenalbungoma",
     title: "Kizazi Phenomenal",
     category: "Family & Children",
     startDate: "2026-10-30",
@@ -89,16 +89,16 @@ const events: GalleryEvent[] = [
     summary:
       "Philippians 3:10 : That I may know Him and the power of His resurrection.",
     description: "",
-    cover: "kizazi-phenomenal-2026-8.webp",
+    cover: "kizakiphenomenalbungoma-8.webp",
     published: true,
     photos: fromFolder(
-      "kizazi-phenomenal-2026",
+      "kizakiphenomenalbungoma",
       "Kizazi Phenomenal 2026 at Brethren Fellowship Church, Bungoma",
-      [6, 10, 15]
+      [6, 10, 15],
     ),
   },
   {
-    slug: "grand-mega-prayer-retreat-2026",
+    slug: "pkmgrandmegaprayerretreat",
     title: "Grand Mega Prayer Retreat",
     category: "Prayer & Retreats",
     startDate: "2026-11-11",
@@ -108,16 +108,16 @@ const events: GalleryEvent[] = [
     summary:
       "Daniel 11:32 : ...but the people that do know their God shall be strong, and do exploits.",
     description: "",
-    cover: "grand-mega-prayer-retreat-2026-35.webp",
+    cover: "pkmgrandmegaprayerretreat-35.webp",
     published: true,
     photos: fromFolder(
-      "grand-mega-prayer-retreat-2026",
+      "pkmgrandmegaprayerretreat",
       "Grand Mega Prayer Retreat 2026 at Heavens Gate, Nakuru",
-      [2, 7, 12]
+      [2, 7, 12],
     ),
   },
   {
-    slug: "dunamis-prayer-breakfast-2026",
+    slug: "pkmdunamisprayerbreakfast",
     title: "Dunamis Prayer Breakfast",
     category: "Prayer & Retreats",
     startDate: "2026-11-14",
@@ -126,16 +126,16 @@ const events: GalleryEvent[] = [
     summary:
       "Psalm 18:29 : For by thee I have run through a troop; and by my God have I leaped over a wall.",
     description: "",
-    cover: "dunamis-prayer-breakfast-2026-1.webp",
+    cover: "pkmdunamisprayerbreakfast-1.webp",
     published: true,
     photos: fromFolder(
-      "dunamis-prayer-breakfast-2026",
+      "pkmdunamisprayerbreakfast",
       "Dunamis Prayer Breakfast 2026 at Kingdom Seekers Complex, Nakuru",
-      [3, 5, 9]
+      [3, 5, 9],
     ),
   },
   {
-    slug: "grand-mega-levitical-conference-2026",
+    slug: "pkmleviticalconference",
     title: "Grand Mega Levitical Conference",
     category: "Conferences",
     startDate: "2026-04-20",
@@ -144,30 +144,49 @@ const events: GalleryEvent[] = [
     location: "Karen, Nairobi",
     summary: "1st Samuel 30:8 : Pursue, overtake and recover all!",
     description: "",
-    cover: "grand-mega-levitical-conference-2026-1.webp",
+    cover: "pkmleviticalconference-39.webp",
     published: true,
     photos: fromFolder(
-      "grand-mega-levitical-conference-2026",
+      "pkmleviticalconference",
       "Grand Mega Levitical Conference 2026 at CORAT Africa, Karen, Nairobi",
-      [1, 5, 10]
+      [39, 5, 10],
     ),
   },
   {
-    slug: "grand-levitical-ladies-conference-2026",
-    title: "Grand Levitical Ladies Conference",
+    slug: "2026annualconferenceofchildren",
+    title: "Annual Conference of Children Servants of God",
     category: "Conferences",
-    startDate: "2026-04-21",
-    endDate: "2026-04-23",
-    venue: "CORAT Africa",
-    location: "Karen, Nairobi",
+    startDate: "2026-03-21",
+    endDate: "2026-03-23",
+    venue: "Heaven's Gate",
+    location: "Nakuru",
     summary: "1st Samuel 30:8 : Pursue, overtake and recover all!",
     description: "",
-    cover: "grand-levitical-ladies-conference-2026-1.webp",
+    cover: "2026annualconferenceofchildren-1.webp",
     published: true,
     photos: fromFolder(
-      "grand-levitical-ladies-conference-2026",
-      "Grand Levitical Ladies Conference 2026 at CORAT Africa, Karen, Nairobi",
-      [3, 7, 15]
+      "2026annualconferenceofchildren",
+      "Annual Conference of Children Servants of God",
+      [3, 7, 15],
+    ),
+  },
+  {
+    slug: "pkmgrandconference",
+    title: "Grand Mega Conference",
+    category: "Family & Children",
+    startDate: "2025-04-22",
+    endDate: "2025-04-25",
+    venue: "Salama Bling Beach Resort",
+    location: "Kanami, Mombasa",
+    summary:
+      "Genesis 17: 15-16 : ... you will no longer to call her Sarai; her name will be Sarah ...",
+    description: "",
+    cover: "pkmgrandconference-1.webp", // keep your chosen cover
+    published: true,
+    photos: fromFolder(
+      "pkmgrandconference",
+      "Grand Mega Conference 2025 Kanami, Mombasa",
+      [1, 5, 9], // keep your featured picks
     ),
   },
 ];
