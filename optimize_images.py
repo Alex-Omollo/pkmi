@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 # Main parent directory
-SOURCE_DIR = Path("/home/samarai/Dev/pkmi/public/images/events")
+SOURCE_DIR = Path("/home/samarai/Dev/pkmi/public/images/gallery")
 
 # Separate output directory
 OUTPUT_DIR = SOURCE_DIR.parent / f"{SOURCE_DIR.name}_optimized"

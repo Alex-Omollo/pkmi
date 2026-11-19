@@ -188,6 +188,9 @@ h2 { margin: 18px 0 22px; font-size: clamp(36px, 4.2vw, 56px); }
 .upcoming-date strong { font-family: var(--serif); font-size: 34px; font-weight: 500; line-height: 1; }
 .upcoming-date span { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
 .upcoming-item h3 { margin: 8px 0 4px; color: var(--plum); font-family: var(--serif); font-size: 28px; font-weight: 500; }
+.upcoming-side { display: flex; flex-direction: column; align-items: stretch; gap: 14px; width: 180px; }
+.upcoming-poster { position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; padding: 0; border: 1px solid var(--line); background: var(--paper); overflow: hidden; cursor: zoom-in; }
+.upcoming-poster img { object-fit: contain; }
 .event-card { display: block; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; }
 button.event-card { cursor: zoom-in; }
 .event-card-image { position: relative; display: block; aspect-ratio: 4 / 5; margin-bottom: 16px; overflow: hidden; background: var(--paper); }
@@ -214,6 +217,7 @@ button.event-card-image { display: block; width: 100%; padding: 0; border: 0; cu
 @media (max-width: 800px) {
   .missing-page { padding: 80px 0 90px; }
   .missing-code { top: -20px; }
+  .upcoming-side { width: 100%; max-width: 280px; }
 }
 
 /* Gallery */

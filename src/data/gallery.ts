@@ -156,17 +156,18 @@ const events: GalleryEvent[] = [
     slug: "2026annualconferenceofchildren",
     title: "Annual Conference of Children Servants of God",
     category: "Conferences",
-    startDate: "2026-03-21",
-    endDate: "2026-03-23",
-    venue: "Heaven's Gate",
-    location: "Nakuru",
-    summary: "1st Samuel 30:8 : Pursue, overtake and recover all!",
+    startDate: "2026-08-13",
+    endDate: "2026-08-16",
+    venue: "Awasi Multicultural Youth Center",
+    location: "Kisumu",
+    summary:
+      "Colossians 3:23 : Whatever you do, work at it with all your heart as working for the Lord ...",
     description: "",
     cover: "2026annualconferenceofchildren-1.webp",
     published: true,
     photos: fromFolder(
       "2026annualconferenceofchildren",
-      "Annual Conference of Children Servants of God",
+      "Annual Conference of Children Servants of God, Awasi Multicultural Youth Center, Kisumu",
       [3, 7, 15],
     ),
   },
@@ -186,6 +187,25 @@ const events: GalleryEvent[] = [
     photos: fromFolder(
       "pkmgrandconference",
       "Grand Mega Conference 2025 Kanami, Mombasa",
+      [1, 5, 9], // keep your featured picks
+    ),
+  },
+  {
+    slug: "leadersmeeting2026",
+    title: "Leadership meeting",
+    category: "Family & Children",
+    startDate: "2026-09-22",
+    endDate: "2026-09-25",
+    venue: "Hellenis GuestHouse",
+    location: "Kakamega",
+    summary:
+      "Genesis 17: 15-16 : ... you will no longer to call her Sarai; her name will be Sarah ...",
+    description: "",
+    cover: "leadersmeeting2026-1.webp", // keep your chosen cover
+    published: true,
+    photos: fromFolder(
+      "leadersmeeting2026",
+      "Leadership meeting 2026 Kakamega",
       [1, 5, 9], // keep your featured picks
     ),
   },

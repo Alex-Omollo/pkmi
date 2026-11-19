@@ -22,16 +22,16 @@ export type ListedEvent = {
 // Events WITHOUT a gallery: upcoming ones, and past ones that only have a poster.
 // Events that exist in gallery.ts are picked up automatically; don't repeat them here.
 export const listedEvents: ListedEvent[] = [
-  // {
-  //   slug: "grand-mega-levitical-conference-2027",
-  //   title: "Grand Mega Levitical Conference",
-  //   category: "Conferences",
-  //   startDate: "2027-04-19",
-  //   endDate: "2027-04-23",
-  //   venue: "CORAT Africa",
-  //   location: "Karen, Nairobi",
-  //   summary: "Verse or one-line theme here.",
-  // },
+  {
+    slug: "pkm-kitale-2027",
+    title: "High Voltage Volcanic Conference",
+    category: "Conferences",
+    startDate: "2027-04-13",
+    endDate: "2027-04-17",
+    venue: "",
+    location: "Kitale",
+    summary: "",
+  },
 ];
 
 export type EventCardData = ListedEvent & {
@@ -135,6 +135,8 @@ export function getPosters(): PosterCard[] {
       const name = m[1].toLowerCase();
       const stem = file.replace(/\.webp$/i, "").toLowerCase();
       const slug = galleryLinks[stem];
+      const cardSlugs = new Set(getAllEvents().map((e) => e.slug));
+      if (cardSlugs.has(stem)) return [];
       return [
         {
           src: `/images/events/${file}`,

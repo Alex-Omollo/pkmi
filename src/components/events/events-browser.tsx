@@ -19,6 +19,7 @@ export function EventsBrowser({
 }) {
   const [today, setToday] = useState(builtOn);
   const [active, setActive] = useState<number | null>(null);
+  const [posterOpen, setPosterOpen] = useState<string | null>(null);
 
   useEffect(() => {
     setToday(new Date().toLocaleDateString("en-CA"));
@@ -72,10 +73,29 @@ export function EventsBrowser({
                     </p>
                     <p className="event-summary">{e.summary}</p>
                   </div>
-                  {e.registerUrl && (
-                    <a className="button" href={e.registerUrl}>
-                      Register ↗
-                    </a>
+                  {(e.poster || e.registerUrl) && (
+                    <div className="upcoming-side">
+                      {e.poster && (
+                        <button
+                          type="button"
+                          className="upcoming-poster"
+                          aria-label={`View poster: ${e.title}`}
+                          onClick={() => setPosterOpen(e.poster!)}
+                        >
+                          <Image
+                            src={e.poster}
+                            alt={`Poster for ${e.title}`}
+                            fill
+                            sizes="(max-width: 800px) 280px, 180px"
+                          />
+                        </button>
+                      )}
+                      {e.registerUrl && (
+                        <a className="button" href={e.registerUrl}>
+                          Register ↗
+                        </a>
+                      )}
+                    </div>
                   )}
                 </article>
               ))}
@@ -138,6 +158,14 @@ export function EventsBrowser({
           index={active}
           onClose={() => setActive(null)}
           onNavigate={setActive}
+        />
+      )}
+      {posterOpen && (
+        <PhotoLightbox
+          photos={[{ src: posterOpen, alt: "Event poster" }]}
+          index={0}
+          onClose={() => setPosterOpen(null)}
+          onNavigate={() => {}}
         />
       )}
     </>
