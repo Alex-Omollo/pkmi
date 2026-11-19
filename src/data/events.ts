@@ -47,16 +47,17 @@ const badge = (iso: string, opt: Intl.DateTimeFormatOptions) =>
     new Date(iso),
   );
 
-
-const POSTER_DIR = "public/images/events";
-// const POSTER_DIR = "events"; // public/events
+// Filesystem location and public URL are kept separate on purpose:
+// files live in public/images/events, but are served from /images/events.
+const POSTER_FS_DIR = path.join(process.cwd(), "public", "images", "events");
+const POSTER_URL_BASE = "/images/events";
 const POSTER_EXTS = [".webp", ".jpg", ".jpeg", ".png"];
 
 const posterFor = (slug: string) => {
   const ext = POSTER_EXTS.find((x) =>
-    existsSync(path.join(process.cwd(), "public", POSTER_DIR, `${slug}${x}`)),
+    existsSync(path.join(POSTER_FS_DIR, `${slug}${x}`)),
   );
-  return ext ? `/${POSTER_DIR}/${slug}${ext}` : undefined;
+  return ext ? `${POSTER_URL_BASE}/${slug}${ext}` : undefined;
 };
 
 const toCard = (
@@ -98,7 +99,6 @@ export type PosterCard = {
   galleryHref?: string;
 };
 
-
 // poster filename (no extension, lowercase) -> gallery slug, when photos exist
 const galleryLinks: Record<string, string> = {
   "kizazi-phenomenal-2025-14": "kizazi-phenomenal-2025",
@@ -124,22 +124,24 @@ const humanize = (s: string) =>
 export function getPosters(): PosterCard[] {
   let files: string[] = [];
   try {
-    files = readdirSync(path.join(process.cwd(), POSTER_DIR));
+    files = readdirSync(POSTER_FS_DIR);
   } catch {
     // folder missing: no posters
   }
+  // Computed once, not per file.
+  const cardSlugs = new Set(getAllEvents().map((e) => e.slug));
+
   return files
     .flatMap((file) => {
       const m = file.match(/^(.+?)-(\d{4})(?:-\d+)?\.webp$/i);
       if (!m) return [];
       const name = m[1].toLowerCase();
       const stem = file.replace(/\.webp$/i, "").toLowerCase();
+      if (cardSlugs.has(stem)) return []; // already shown on an event card
       const slug = galleryLinks[stem];
-      const cardSlugs = new Set(getAllEvents().map((e) => e.slug));
-      if (cardSlugs.has(stem)) return [];
       return [
         {
-          src: `/images/events/${file}`,
+          src: `${POSTER_URL_BASE}/${file}`,
           title: titleOverrides[name] ?? humanize(m[1]),
           year: Number(m[2]),
           galleryHref:

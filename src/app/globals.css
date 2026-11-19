@@ -280,6 +280,8 @@ button.event-card-image { display: block; width: 100%; padding: 0; border: 0; cu
 .moments-caption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 40px 20px 18px; background: linear-gradient(transparent, rgba(35,7,31,.85)); color: white; }
 .moments-caption strong { font-family: var(--serif); font-size: 20px; font-weight: 500; }
 .moments-caption small { color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: .1em; }
+.moments-layer { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+.moments-layer.is-shown { opacity: 1; }
 
 @media (max-width: 800px) {
   .event-section-head { align-items: flex-start; flex-direction: column; }
