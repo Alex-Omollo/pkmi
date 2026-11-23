@@ -209,6 +209,25 @@ const events: GalleryEvent[] = [
       [1, 5, 9], // keep your featured picks
     ),
   },
+  {
+    slug: "pkmconsultativeleadersmeeting",
+    title: "Leaders meeting",
+    category: "Family & Children",
+    startDate: "2026-09-03",
+    endDate: "2026-09-04",
+    venue: "Hellenis GuestHouse",
+    location: "Kakamega",
+    summary:
+      "Genesis 17: 15-16 : ... you will no longer to call her Sarai; her name will be Sarah ...",
+    description: "",
+    cover: "pkmconsultativeleadersmeeting-1.webp", // keep your chosen cover
+    published: true,
+    photos: fromFolder(
+      "pkmconsultativeleadersmeeting",
+      "Consultative Leaders meeting 2026 Kakamega",
+      [1, 5, 9], // keep your featured picks
+    ),
+  },
 ];
 /* ----------------------------------------------------------------------------------- */
 

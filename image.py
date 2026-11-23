@@ -9,7 +9,7 @@ IMAGE_EXTENSIONS = {
     ".gif", ".bmp", ".tiff", ".svg"
 }
 
-PREVIEW_ONLY = False  # Change to False to perform renaming
+PREVIEW_ONLY = True  # Change to False to perform renaming
 
 for folder in sorted(ROOT_DIR.rglob("*")):
     if not folder.is_dir():
