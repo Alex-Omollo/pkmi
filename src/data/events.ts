@@ -23,7 +23,7 @@ export type ListedEvent = {
 // Events that exist in gallery.ts are picked up automatically; don't repeat them here.
 export const listedEvents: ListedEvent[] = [
   {
-    slug: "",
+    slug: "pkm-kitale-2027",
     title: "High Voltage Volcanic Conference",
     category: "Conferences",
     startDate: "2027-04-13",
