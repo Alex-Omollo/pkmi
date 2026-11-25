@@ -8,7 +8,7 @@ import {
 } from "./gallery";
 
 export type ListedEvent = {
-  slug: string; // also the poster filename: public/images/events/<slug>.webp
+  slug?: string; // also the poster filename: public/images/events/<slug>.webp
   title: string;
   category: GalleryCategory;
   startDate: string; // ISO "2027-04-19"
@@ -23,7 +23,7 @@ export type ListedEvent = {
 // Events that exist in gallery.ts are picked up automatically; don't repeat them here.
 export const listedEvents: ListedEvent[] = [
   {
-    slug: "pkm-kitale-2027",
+    slug: "",
     title: "High Voltage Volcanic Conference",
     category: "Conferences",
     startDate: "2027-04-13",

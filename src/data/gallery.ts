@@ -228,6 +228,24 @@ const events: GalleryEvent[] = [
       [1, 5, 9], // keep your featured picks
     ),
   },
+  {
+    slug: "kizazichristianministerschildren",
+    title: "Leaders meeting",
+    category: "Family & Children",
+    startDate: "2024-08",
+    venue: "Hellenis GuestHouse",
+    location: "Kakamega",
+    summary:
+      "Joshua 1: 5 : No one will be able to stand against you all the days of your life. As i was with Moses ...",
+    description: "",
+    cover: "kizazichristianministerschildren-1.webp", // keep your chosen cover
+    published: true,
+    photos: fromFolder(
+      "kizazichristianministerschildren",
+      "Consultative Leaders meeting 2026 Kakamega",
+      [1, 5, 9], // keep your featured picks
+    ),
+  },
 ];
 /* ----------------------------------------------------------------------------------- */
 
