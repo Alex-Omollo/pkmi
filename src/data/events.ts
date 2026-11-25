@@ -8,7 +8,7 @@ import {
 } from "./gallery";
 
 export type ListedEvent = {
-  slug?: string; // also the poster filename: public/images/events/<slug>.webp
+  slug: string; // also the poster filename: public/images/events/<slug>.webp
   title: string;
   category: GalleryCategory;
   startDate: string; // ISO "2027-04-19"
