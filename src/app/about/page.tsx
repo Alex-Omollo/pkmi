@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LeadershipGrid } from "@/components/leadership-grid";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = { title: "About PKMI" };
@@ -8,12 +9,132 @@ const values = ["Fear of the Lord", "God’s love demonstrated", "Honour for ser
 const objectives = ["Foster unity and collaboration in the Body of Christ.", "Build capacity to rightly divide God’s Word.", "Help families of servants of God carry God’s image.", "Create avenues for children of servants of God to become who the Bible says they are.", "Represent the needs and concerns of servants of God and engage in advocacy.", "Support pastors and church ministers through training, creativity, innovation and resources.", "Strengthen holistic wellbeing.", "Promote cooperation and dialogue among churches and ministries."];
 
 export default function AboutPage() {
-  return <>
-    <PageHero eyebrow="About the organization" title="Who we are and why we exist." description="A network of women servants of God, united by faith and a shared commitment to the wellbeing of families and the wider Body of Christ." />
-    <section className="section-pad"><div className="container narrow-copy"><span className="eyebrow">Our identity</span><h2>Birthed by God.<br /><em>Committed to serving.</em></h2><p className="lead">Phenomenal Kingdom Mothers International (PKMI) is a Christian spiritual forum, birthed by God and for God.</p><p>It is a network of women servants of God who came together because of the social, spiritual, emotional and economic challenges affecting families of servants of God.</p><p>We stand in the gap to intercede for servants of God and do what we can, with what God enables us to do, to support their welfare and strengthen Christian marriages, parenting and the character of individuals and families.</p></div></section>
-    <section className="soft-section section-pad"><div className="container two-column"><div><span className="eyebrow">Our vision</span><h2>Families flourishing<br /><em>in God’s purpose.</em></h2><p>To build servants of God together with their families to be spiritually, socially and economically prosperous and stable enough to serve God fruitfully.</p></div><div><span className="eyebrow">Our mission</span><h2>Nurturing potential.<br /><em>Influencing generations.</em></h2><p>To stir up the Christian potential to nurture servants of God to influence their generation while creating a common front through networking and collaboration.</p></div></div></section>
-    <section className="section-pad"><div className="container two-column values-objectives"><div><span className="eyebrow">Our core values</span><h2>What grounds us.</h2><ul className="check-list">{values.map((value) => <li key={value}>{value}</li>)}</ul></div><div><span className="eyebrow">Our key objectives</span><h2>What we work toward.</h2><ol className="number-list">{objectives.map((value) => <li key={value}>{value}</li>)}</ol></div></div></section>
-    <section className="belief-band"><div className="container belief-inner"><div><span className="eyebrow eyebrow-light">Our faith</span><h2>Christ at the centre<br /><em>of all we do.</em></h2></div><p>PKMI’s statement of faith affirms one God—Father, Son and Holy Spirit; Jesus Christ as our Saviour; the inspiration of the Bible; salvation through faith in Jesus Christ; the local church and fellowship; and the Great Commission.</p></div></section>
-    <section className="section-pad"><div className="container section-heading-row"><div><span className="eyebrow">Continue exploring</span><h2>Discover how we <em>serve.</em></h2></div><Link className="button" href="/our-work">Explore our work ↗</Link></div></section>
-  </>;
+  return (
+    <>
+      <PageHero
+        eyebrow="About the organization"
+        title="Who we are and why we exist."
+        description="A network of women servants of God, united by faith and a shared commitment to the wellbeing of families and the wider Body of Christ."
+      />
+      <section className="section-pad">
+        <div className="container narrow-copy">
+          <span className="eyebrow">Our identity</span>
+          <h2>
+            Birthed by God.
+            <br />
+            <em>Committed to serving.</em>
+          </h2>
+          <p className="lead">
+            Phenomenal Kingdom Mothers International (PKMI) is a Christian
+            spiritual forum, birthed by God and for God.
+          </p>
+          <p>
+            It is a network of women servants of God who came together because
+            of the social, spiritual, emotional and economic challenges
+            affecting families of servants of God.
+          </p>
+          <p>
+            We stand in the gap to intercede for servants of God and do what we
+            can, with what God enables us to do, to support their welfare and
+            strengthen Christian marriages, parenting and the character of
+            individuals and families.
+          </p>
+        </div>
+      </section>
+      <section className="soft-section section-pad">
+        <div className="container two-column">
+          <div>
+            <span className="eyebrow">Our vision</span>
+            <h2>
+              Families flourishing
+              <br />
+              <em>in God’s purpose.</em>
+            </h2>
+            <p>
+              To build servants of God together with their families to be
+              spiritually, socially and economically prosperous and stable
+              enough to serve God fruitfully.
+            </p>
+          </div>
+          <div>
+            <span className="eyebrow">Our mission</span>
+            <h2>
+              Nurturing potential.
+              <br />
+              <em>Influencing generations.</em>
+            </h2>
+            <p>
+              To stir up the Christian potential to nurture servants of God to
+              influence their generation while creating a common front through
+              networking and collaboration.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="section-pad">
+        <div className="container two-column values-objectives">
+          <div>
+            <span className="eyebrow">Our core values</span>
+            <h2>What grounds us.</h2>
+            <ul className="check-list">
+              {values.map((value) => (
+                <li key={value}>{value}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <span className="eyebrow">Our key objectives</span>
+            <h2>What we work toward.</h2>
+            <ol className="number-list">
+              {objectives.map((value) => (
+                <li key={value}>{value}</li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section className="belief-band">
+        <div className="container belief-inner">
+          <div>
+            <span className="eyebrow eyebrow-light">Our faith</span>
+            <h2>
+              Christ at the centre
+              <br />
+              <em>of all we do.</em>
+            </h2>
+          </div>
+          <p>
+            PKMI’s statement of faith affirms one God—Father, Son and Holy
+            Spirit; Jesus Christ as our Saviour; the inspiration of the Bible;
+            salvation through faith in Jesus Christ; the local church and
+            fellowship; and the Great Commission.
+          </p>
+        </div>
+      </section>
+      <section className="soft-section section-pad">
+        <div className="container">
+          <div className="section-intro">
+            <span className="eyebrow">Our leadership</span>
+            <h2>
+              Servants leading <em>with purpose.</em>
+            </h2>
+          </div>
+          <LeadershipGrid />
+        </div>
+      </section>
+      <section className="section-pad">
+        <div className="container section-heading-row">
+          <div>
+            <span className="eyebrow">Continue exploring</span>
+            <h2>
+              Discover how we <em>serve.</em>
+            </h2>
+          </div>
+          <Link className="button" href="/our-work">
+            Explore our work ↗
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }
